@@ -8,6 +8,11 @@ def new_state
 end
 
 class Action < Struct.new(:new_state, :action)
+  
+  def inspect
+    "[#{new_state}, #{action}]"
+  end
+  
 end
 
 INITIAL_STATE = new_state
