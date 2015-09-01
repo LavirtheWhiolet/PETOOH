@@ -10,7 +10,7 @@ end
 class Action < Struct.new(:new_state, :action)
   
   def inspect
-    if action == :return then "#{new_state}&ret"
+    if action == :return then "#{new_state}(ret)"
     else "#{new_state}"
     end
   end
