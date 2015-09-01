@@ -1,3 +1,3 @@
-states = []
+machine = {}
 
-words = %W{ abc abd 
+words = %W{ abc abd }
