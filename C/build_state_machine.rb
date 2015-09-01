@@ -1,6 +1,6 @@
 machine = {}
 
-words = %W{ abc abd }
+words = %W{ abc abd bde }
 
 $next_state = 0
 def new_state
@@ -10,7 +10,9 @@ end
 class Action < Struct.new(:new_state, :action)
   
   def inspect
-    "[#{new_state}, #{action}]"
+    if action == :return then "#{new_state}&ret"
+    else "#{new_state}"
+    end
   end
   
 end
