@@ -19,6 +19,7 @@ for word in words
       machine[[state, c]] = INITIAL_STATE
     else
       state = machine[[state, c]]
+    end
   end
 end
 p machine
