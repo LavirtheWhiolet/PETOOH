@@ -10,8 +10,8 @@ end
 class Action < Struct.new(:new_state, :action)
   
   def inspect
-    if action == :return then "#{new_state}(ret)"
-    else "#{new_state}"
+    if action == :move then new_state.to_s
+    else "#{new_state}(#{action})"
     end
   end
   
@@ -26,7 +26,7 @@ for word in words
       machine[[state, c]] = Action.new(new_state, :move)
     end
     if i == (word.size - 1) then
-      machine[[state, c]] = Action.new(INITIAL_STATE, :return)
+      machine[[state, c]] = Action.new(INITIAL_STATE, word)
     else
       state = machine[[state, c]].new_state
     end
