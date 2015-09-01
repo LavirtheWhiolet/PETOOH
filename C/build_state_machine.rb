@@ -1,8 +1,9 @@
-require 'ahocorasick'
+require 'rbahocorasick'
 require 'yaml'
 
-words = %W{ ab bd }
+words = %W{ kuka ko }
 
-ah = AhoC::Trie.new :DFA
-words.each { |word| ah.add word }
-puts ah.to_yaml
+m = RBAhoCorasick::DFA.new
+words.each { |word| m.add word }
+m.finalize
+puts m.to_yaml
