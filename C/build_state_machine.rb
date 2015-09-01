@@ -1,6 +1,6 @@
 require 'aho_corasick'
 
-words = %W{ abc cba }
+words = %W{ a b }
 
 ah = AhoCorasick.new(*words)
 p ah
