@@ -32,4 +32,3 @@ for word in words
     end
   end
 end
-p machine
