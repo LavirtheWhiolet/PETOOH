@@ -26,7 +26,7 @@ for word in words
     if i == (word.size - 1) then
       machine[[state, c]] = Action.new(INITIAL_STATE, :return)
     else
-      state = machine[[state, c]]
+      state = machine[[state, c]].new_state
     end
   end
 end
