@@ -15,7 +15,10 @@ for word in words
     if not machine.has_key? [state, c] then
       machine[[state, c]] = new_state
     end
-    state = machine[[state, c]]
+    if i == (word.size - 1) then
+      machine[[state, c]] = INITIAL_STATE
+    else
+      state = machine[[state, c]]
   end
-  machine[[state, ""]] = INITIAL_STATE
 end
+p machine
