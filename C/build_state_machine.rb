@@ -11,7 +11,7 @@ INITIAL_STATE = new_state
 
 for word in words
   state = INITIAL_STATE
-  for c, i in word.chars.zip((0...s.size).to_a)
+  for c, i in word.chars.zip((0...word.size).to_a)
     if not machine.has_key? [state, c] then
       machine[[state, c]] = new_state
     end
